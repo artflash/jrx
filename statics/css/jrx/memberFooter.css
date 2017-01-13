@@ -1,0 +1,36 @@
+/* 文件创建于2015年6月12号
+* 编写人：灵创石
+* 开发团队：灵创石工作室
+* 网址：http://www.lingchuangshi.com
+* 其下网站：贱人笑
+* 网址：http://www.jianrenxiao.com
+ */
+ 
+body{font-family:"微软雅黑"; font-size:14px; margin:0; padding:0}
+ul,li,h1,h2,h3,h4,p,dl,dd,dt,form,iframe{margin:0;padding:0;font-weight:normal}
+li{list-style:none}
+a{text-decoration:none}
+a:hover,h1 a:hover,h3 a:hover,.mahua a:hover{color:#ff7e69}
+
+
+/*网站底部样式*/
+.footer{margin-top:40px;border-top:1px solid #d9d9d9;overflow:hidden;width:100%}
+.footer-content{width:1000px}
+
+.about{padding:20px 15px;width:970px;border-bottom:1px solid #d9d9d9;overflow:hidden}
+.about dl{float:left;width:230px}
+.about dl.about-contact{width:280px}
+.about dt{font-size:18px;height:24px;line-height:24px;margin-bottom:10px}
+.about dd{height:36px;line-height:36px;color:#999}
+.about dd i{margin:3px 5px 0;display:inline-block;width:15px;height:16px;background:url(../img/mahua_common.png) -978px -500px no-repeat}
+.about dd a{margin-right:20px;color:#999}
+.about dd a:hover{color:#ff7e69}
+.about dd a.a-color-red{color:#ff7e69}
+.about dd a.a-color-red:hover{color:#e05857}
+
+.footer-weibo,.footer-qzone,.footer-QQweibo,.footer-weixin{height:32px;display:inline-block;padding-left:25px;background:url(../img/mahua_common.png) -975px -561px no-repeat}
+.footer-qzone{background-position:-975px -591px}
+.footer-QQweibo{background-position:-975px -620px}
+.footer-weixin{background-position:-975px -650px}
+.coypright{padding:20px 0 80px}
+.coypright p{text-align:center;color:#999}

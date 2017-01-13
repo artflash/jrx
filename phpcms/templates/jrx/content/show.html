@@ -1,0 +1,51 @@
+{template "content","header"}
+<div class="show-main">
+	<div class="show-left">
+    	<div class="show-title"><h2>{$title}</h2></div>
+        <div class="show-content">
+			<?php
+				echo preg_replace("/alt=\".*?\"/i","alt=\"$title\"",$content);
+			?>
+        </div>
+        <div class="joke-ba">
+        	<a href="{$previous_page[url]}" class="joke-before"></a>
+            <a href="{$next_page[url]}" class="joke-after"></a>
+        </div>
+        <hr class="show-hr">
+        <div class="sharebtn-content">
+			<!--<div class="comment-dingcai">
+				<a class="ding" id="up{$id}" href="javascript:void(0);" title="顶" onclick="digg({$id},1,1)">{$content_data[0]['up']}</a>
+				<span class="line">|</span>
+				<a class="cai" id="down{$id}" href="javascript:void(0);" onclick="digg({$id},0,1)">{$content_data[0]['down']}</a>
+				<span class="line">|</span>
+				<a class="comment-btn" href="#" title="评论" onClick="Effect('showHideId',this.parentNode.id)">0</a>
+				<span class="line">|</span>			
+			</div>-->	
+            <div class="bdsharebuttonbox show-sharebtn">
+                <a href="#" class="bds_more" data-cmd="more"></a>
+                <a href="#" class="bds_qzone" data-cmd="qzone"></a>
+                <a href="#" class="bds_tsina" data-cmd="tsina"></a>
+                <a href="#" class="bds_tqq" data-cmd="tqq"></a>
+                <a href="#" class="bds_renren" data-cmd="renren"></a>
+                <a href="#" class="bds_weixin" data-cmd="weixin"></a>
+            </div>
+            <div class="look-times">
+            	阅览次数：<span id="hits"></span>次
+				<script language="JavaScript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script> 
+            </div>
+        </div>
+        <hr class="show-hr" style="clear:both; margin-top:5px">
+        <div class="show-mood">
+        {if module_exists('mood')}<script type="text/javascript" src="{APP_PATH}index.php?m=mood&c=index&a=init&id={id_encode($catid,$id,$siteid)}"></script>
+        {/if}
+        </div>
+     	 {if $allow_comment && module_exists('comment')}
+      <iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("content_$catid",$id,$siteid)}&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0" scrolling="no"></iframe>
+      {/if}
+    </div>
+	{template "content","contentRight"}
+</div>
+{template "content","footer"}
+
+
+

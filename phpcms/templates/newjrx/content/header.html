@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="GBK">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{$SEO['description']}">
+    <meta name="keywords" content="{$SEO['keyword']}" />
+    <meta property="qc:admins" content="72427065176211625601176375" />
+    <meta property="wb:webmaster" content="ebe4b370116736c0" />
+	<!--[if lt IE 9]>  <link rel="stylesheet" type="text/css" href="{CSS_PATH}newjrx/ie8main.css"/> <![endif]-->
+	<!--[if lte IE 8]>  <link rel="stylesheet" type="text/css" href="{CSS_PATH}newjrx/ie8main.css"/> <![endif]-->
+    <link href="{CSS_PATH}newjrx/main.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
+    <script type="text/javascript" src="{JS_PATH}jquery.sgallery.js"></script>
+    <script type="text/javascript" src="{JS_PATH}search_common.js"></script>
+    <script type="text/javascript" src="{JS_PATH}digg.js"></script>
+    <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+    <!--百度代码统计开始-->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?10e1b1d6ed1fcf1b23da2f37deed7e21";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+    <!-- 百度代码统计结束-->
+
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+            updateDingCai();
+        });
+    </script>
+
+
+    <!-- 百度分享代码-->
+    <script>
+        window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"24"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</head>
+<body>
+
+<div class="head">
+    <div class="head-top">
+        <div class="head-container">
+            <div class="head-title">
+                <p>贱人笑-分享你身边的搞笑事，无节操，有内涵</p>
+            </div>
+			<div class="head-login">
+            <script type="text/javascript">document.write('<iframe src="{APP_PATH}index.php?m=member&c=index&a=mini&forward='+encodeURIComponent(location.href)+'&siteid={get_siteid()}" allowTransparency="true"  width="100%" height="30px" frameborder="0" scrolling="no"></iframe>')</script>
+			</div>
+            <!--<div class="head-login">
+                <a class="head-top-qq">QQ登录</a>
+                <a class="head-top-weibo">微博登录</a>
+                <a>|</a>
+                <a class="head-top-ogin">登录</a>
+                <a class="head-top-reg">注册</a>
+            </div>-->
+        </div>
+    </div>
+    <div class="head-nav-container">
+        <div class="head-nav-center">
+            <div class="head-nav-logo">
+                <a href="http://www.jianrenxiao.com"> <img src="{IMG_PATH}jrx/systemImg/logo.png" alt="贱人笑-分享你身边的搞笑事，无节操，有内涵"></a>
+            </div>
+            <div class="head-nav">
+                <ul>
+                    {pc:content action="category" catid="0" num="25" siteid="$siteid"}
+                    {loop $data $r}
+                    <li>
+                        <a href="{$r[url]}" target="_blank"><span>{$r[catname]}</span></a>
+                    </li>
+                    {/loop}
+                    {/pc}
+                </ul>
+            </div>
+            <div class="head-nav-wap">
+                <ul>
+                    <li>
+                        <a href="http://www.jianrenxiao.com/index.php?m=content&c=index&a=lists&catid=2">笑话</a>
+                    </li>
+                    <li>
+                        <a href="http://www.jianrenxiao.com/index.php?m=content&c=index&a=lists&catid=3">内涵</a>
+                    </li>
+                    <li>
+                        <a href="http://www.jianrenxiao.com/index.php?m=content&c=index&a=lists&catid=4">爆图</a>
+                    </li>
+                </ul>
+            </div>
+			{php $userid= param::get_cookie('_userid');}
+			{if $userid}
+				<div class="head-wap-login">
+					<a href="{APP_PATH}index.php?m=member&c=index&a=logout&forward={urlencode($_GET['forward'])}&siteid={$siteid}" target="_top">退出</a>
+				</div>
+			{else}   
+				<div class="head-wap-login">
+					<a href="{APP_PATH}index.php?m=member&c=index&a=login&forward={urlencode($_GET['forward'])}&siteid={$siteid}">登录</a>
+				</div>
+			{/if}
+            
+        </div>
+    </div>
+</div>

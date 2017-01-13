@@ -1,0 +1,166 @@
+/* 文件创建于2015年12月8号
+* 编写人：灵创石
+* 开发团队：灵创石工作室
+* 网址：http://www.lingchuangshi.com
+* 其下网站：贱人笑
+* 网址：http://www.jianrenxiao.com */
+
+/*====================整体设置==================*/
+*{margin: 0; padding: 0;}
+li{list-style: none}
+a{text-decoration:none}
+a:link,a:visited{color:#0066FF}
+a:hover{color:#ff7e69}
+img{border: none}
+
+
+/*=================通用样式====================*/
+body{font-family: 微软雅黑; font-size: 14px;color: #FFFFFF; background-color: #f1f1f1}
+.head{width: 100%; height: 120px;}
+.head .head-top{width: 100%; height:30px ; background-color: #0066FF; line-height: 30px}
+
+/* 网页大于1000px显示*/
+@media only screen and (min-width: 1000px) {
+    /*===========头部文件开始===========================*/
+    .head-container{width:1000px;margin: 0 auto;}
+    .head-container .head-title{float: left}
+    .head-container .head-login{float: right}
+    .head-login a{margin-left:20px;}
+    .head-top-qq{float: left;text-indent: 25px; background: url("../../images/jrx/systemImg/img.png") -2px 3px no-repeat}
+    .head-top-weibo{float: left;text-indent:25px; background: url("../../images/jrx/systemImg/img.png") -2px -27px no-repeat}
+    .head-nav-container{height:90px;background-color: #FFFFFF; border-bottom: 1px solid rgba(165, 165, 165, 0.43);}
+    .head-nav-center{width:1000px;margin: 0 auto; font-size: 20px;color: #0066FF}
+    .head-nav-logo{float:left;width: 20%}
+    .head-nav{float:left;width:80%;line-height: 90px}
+    .head-nav ul li{display: inline; margin-right: 45px; text-align: center}
+    .head-nav-wap,.head-wap-login,.head-hr{display: none}
+    /*===========头部样式结束==========================================*/
+
+    /*====================主体内容部分============================================*/
+    .content{width:1000px;margin: 10px auto;overflow: hidden}
+    /*==============左部分开始==============================*/
+    .content-left{float:left;width:690px;margin-right:10px;}
+    .content-top-focue{width: 690px;height:220px;}
+    .content-left-joke{margin-top:10px;width:690px;background-color: #FFFFFF}
+    .content-left-joke-head{padding: 10px; height: 50px;}
+    .avatar-icon{float:left;width:50px; height: 50px;margin-right: 20px}
+    .joke-username{color: #0066FF;margin-bottom: 4px;font-size: 16px}
+    .joke-title a{color:#000000;font-size:18px}
+    .joke-title a:hover{color: #ff7e69}
+    .content-left-content{margin-left:70px;padding:0 10px 10px;color: #666}
+    .content-left-comment{width: 690px; height: 40px; border-top: 1px solid #f3f2f2;position: relative;line-height: 40px}
+    .comment-dingcai{float:left;width: 260px;left:80px;position: relative}
+    .bdsharebuttonbox{float: left;position: relative; left:80px;top:2px}
+    .comment-dingcai a.ding{padding-left:22px;background: url("../../images/jrx/systemImg/jian_new_icon.png") no-repeat}
+    .comment-dingcai a.cai{padding-left:22px; background: url("../../images/jrx/systemImg/jian_new_icon.png") 2px -38px no-repeat}
+    .comment-dingcai a.comment-btn{padding-left:22px; background: url("../../images/jrx/systemImg/jian_new_icon.png") 2px -74px no-repeat}
+
+    /*===================分页样式开始==============================*/
+    .link-page{width:690px; text-align:center; margin:10px 0px}
+    .page{height:33px}
+    .page a{float:left;display:block;color:#666;margin-right:8px;height:32px;line-height:32px;background:#fff;border-bottom:1px solid #e8e7e6;padding:0 12px}
+    .page a.next-page{float:right;margin-right:0;}
+    .page span{float:left;display:block;height:32px;width:32px;overflow:hidden;line-height:34px;margin-right:8px; color:#fff;background:#ff845b; border-color:#ff845b}
+    .page a.hover,.page a:hover{color:#fff;background:#ff845b;border-color:#ff845b}
+    .page a.hover{background:#dc643c;border-color:#dc643c}
+    /*===================分页样式结束==============================*/
+    /*==============左部分结束==============================*/
+    .content-right{float:left;width:300px;}
+    /*================右部分开始===========================*/
+    .content-right-top{width:300px; height: 220px}
+    .content-right-top img{width:100%; height: 100%}
+    .content-right-newjoke-container{width:300px;margin-top:10px;background-color: #FFFFFF}
+    .content-right-newjoke-head{height:47px;background-color: #fafafa;line-height: 47px}
+    .newjoke-head-title{float:left;width:150px; height: 47px; background: url("../../images/jrx/systemImg/r_user_sorting.png") no-repeat;text-align: center; font-size: 18px}
+    .newjoke-head-more {float:right;margin-right: 10px}
+    .newjoke-head-more a{color: #787878;}
+    .newjoke-head-more a:hover{color: #ff7e69}
+    .newjoke-content{width:270px;height: 40px;padding: 15px;border-bottom: 1px dotted darkgray}
+    .right-newjoke-avatar{float:left;width:40px;height:40px; margin-right: 10px}
+    .right-newjoke-content{float:left; color:black;}
+    .right-newjoke-content p a{color: #000000}
+    .right-newjoke-content p a:hover{color: #ff7e69}
+    .right-textjoke-container{width:300px;color: black; background-color: #FFFFFF;margin-top: 10px}
+    .right-textjoke-head{width:300px; height: 45px;line-height: 45px}
+    .textjoke-title{float: left;font-size: 16px;  margin-left: 10px}
+    .textjoke-more{float: right;margin-right:10px}
+    .right-textjoke-head p a{color: black}
+    .right-textjoke-head p a:hover{color: #ff7e69}
+    .content-textjoke-content{width: 300px;}
+    .content-textjoke-content li{line-height:35px;text-indent:10px;background: url("../../images/jrx/systemImg/img.png") -997px -13px no-repeat;margin: 0 15px; border-bottom: 1px dashed #e8e7e6}
+    .content-textjoke-content li a{color: black}
+    .content-textjoke-content li a:hover{color: #ff7e69}
+
+    /*================右部结束===========================*/
+
+    /*=======================底部文件样式开始==========================*/
+    .footer{margin-top:40px;border-top:1px solid #d9d9d9;overflow:hidden;width:100%}
+    .footer-content{width:1000px; margin: 0 auto}
+
+    .about{padding:20px 15px;width:970px;border-bottom:1px solid #d9d9d9;overflow:hidden}
+    .about dl{float:left;width:230px}
+    .about dl.about-contact{width:280px}
+    .about dt{font-size:18px;height:24px;line-height:24px;margin-bottom:10px; color: black}
+    .about dd{height:36px;line-height:36px;color:#999}
+    .about dd i{margin:3px 5px 0;display:inline-block;width:15px;height:16px;background:url(../../images/jrx/systemImg/mahua_common.png) -978px -500px no-repeat}
+    .about dd a{margin-right:20px;color:#999}
+    .about dd a:hover{color:#ff7e69}
+    .about dd a.a-color-red{color:#ff7e69}
+    .about dd a.a-color-red:hover{color:#e05857}
+
+    .footer-weibo,.footer-qzone,.footer-QQweibo,.footer-weixin{height:32px;display:inline-block;padding-left:25px;background:url(../../images/jrx/systemImg/mahua_common.png) -975px -561px no-repeat}
+    .footer-qzone{background-position:-975px -591px}
+    .footer-QQweibo{background-position:-975px -620px}
+    .footer-weixin{background-position:-975px -650px}
+    .coypright{padding:20px 0 20px}
+    .coypright p{text-align:center;color:#999}
+    .icon-group{margin-bottom:30px; text-align:center}
+    /*=======================底部文件样式结束==========================*/
+
+}
+@media only screen and (max-width: 1000px) {
+    /*===========头部文件开始===========================*/
+    .head-title{width: 100%; text-align: center}
+    .head-login{display: none}
+    .head-nav-center{width: 100%; text-align: center;}
+    .head-nav-logo{float:left; text-align: center;width:25%}
+    .head-nav-logo img{ text-align: center}
+    .head-nav{display: none}
+    .head-nav-wap{float:left;display: block;width:60%}
+    .head-nav-wap ul{padding-left:30px;text-align: center}
+    .head-nav-wap ul li{display: inline; font-size: 16px;line-height: 90px;padding-left:5%; padding-right:5%}
+    .head-wap-login{float: right; line-height: 90px; display: block;width:15%}
+    .head-wap-login a{background-color: #ff7e69; border:1px solid darkgray;padding: 5px; color: #FFFFFF; border-radius: 5px}
+    .head-hr{width:100%; height:2px; display: block}
+
+    /*===========头部样式结束==========================================*/
+
+    /*====================主体内容部分========================================*/
+    .content{width: 100%}
+    /*============================内容左边部分开始================================*/
+    .content-top-focue img{width:100%}
+    .content-left-joke{margin-top:10px;width:100%;background-color: #FFFFFF}
+    .content-left-joke-head{padding: 10px; height: 50px;}
+    .avatar-icon{float:left;width:50px; height: 50px;margin-right: 20px}
+    .joke-username{color: #0066FF;margin-bottom: 4px;font-size: 16px}
+    .joke-title a{color:#000000;font-size:18px}
+    .joke-title a:hover{color: #ff7e69}
+    .content-left-content{margin-left:5px;padding:0 10px 10px;color: #666}
+    .content-left-comment{width: 95%; height: 100%; border-top: 1px solid #f3f2f2;position: relative;line-height: 40px;padding-left:10px}
+    .comment-dingcai{width:100%;position: relative;}
+    .bdsharebuttonbox{position: relative;}
+    .comment-dingcai a.ding{padding-left:22px;background: url("../../images/jrx/systemImg/jian_new_icon.png") no-repeat}
+    .comment-dingcai a.cai{padding-left:22px; background: url("../../images/jrx/systemImg/jian_new_icon.png") 2px -38px no-repeat}
+    .comment-dingcai a.comment-btn{padding-left:22px; background: url("../../images/jrx/systemImg/jian_new_icon.png") 2px -74px no-repeat}
+     /*============================内容右边部分隐藏================================*/
+     .content-right{display:none}
+
+    /*=======================底部文件样式开始==========================*/
+    .footer{margin-top:40px;border-top:1px solid #d9d9d9;overflow:hidden;width:100%}
+    .footer-content{width:100%; margin: 0 auto}
+
+    .about{display: none}
+    .coypright p{text-align:center;color:#999;margin: 10px auto}
+    .icon-group{margin-bottom:30px; text-align:center}
+    /*=======================底部文件样式结束==========================*/
+}

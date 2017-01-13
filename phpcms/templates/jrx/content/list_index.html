@@ -1,0 +1,127 @@
+{template "content","header"}
+<!--main-->
+	<div class="main">
+		<div class="main-left">
+			<div class="list-top-focus">
+				 <div class="FocusPic">
+				{pc:content  action="position" posid="1"  order="listorder DESC" thumb="1" num="5"}
+            	<div class="content" id="main-slide">
+                    <div class="changeDiv">  
+                    {loop $data $r}
+                        <a href="{$r['url']}" target="blank" title="{str_cut($r['title'],30)}"><img src="{thumb($r['thumb'],690,220)}" alt="{$r['title']}" width="690" height="220" alt="{$r['title']}" width="690" height="220"/></a>
+                    {/loop}
+                    </div>
+                </div>
+				{/pc}
+				</div>
+			</div>
+			<!--{pc:content  moreinfo="1" action="lists" catid="11" order="id"  page="$page" num="5" cache="3600"}-->
+			<!--{pc:content  moreinfo="1" action="lists_all" order="inputtime DESC"  page="$_GET['page']" num="3" cache="3600"}-->
+			{pc:get sql="SELECT * FROM jian_news ORDER BY updatetime DESC" num="15" page="$_GET['page']"}
+			{loop $data $r}
+			<div class="main-joke">
+				<div class="main-left-head">
+					<a href="{$r[url]}">
+						<img class="avatar-icon" src="{IMG_PATH}jrx/systemImg/avatar.jpg"/>
+						<!--<img class="avatar-icon" src="{get_memberavatar($r[userid],1,90)}"/>-->
+					</a>
+					<div>
+						<p class="joke-usename">
+							<a href="{$r[url]}" target="blank" title="{str_cut($r['username'],30)}">{str_cut($r['username'],30)}</a>
+						</p>
+						<p class="joke-title">
+							<a href="{$r[url]}" target="blank">{str_cut($r['title'],30)}</a>
+						</p>	
+					</div>
+				</div>		
+				{php $m_id=$r['id']}
+				{php $customTitle = $r['title']}
+				{pc:get sql="SELECT * FROM jian_news_data WHERE id=$m_id" return="content_data"}
+				<div class="main-left-content">
+				<?php
+					echo preg_replace("/alt=\".*?\"/i","alt=\"$customTitle\"",$content_data[0]['content']);
+				?>
+				</div>
+				<div class="main-left-comment-nav" id="main-left-comment">
+					<div class="comment-dingcai">
+						<a class="ding" id="up{$m_id}" href="javascript:void(0);" title="顶" onclick="digg({$m_id},1,1)"></a>
+						<span class="line">|</span>
+						<a class="cai" id="down{$m_id}" href="javascript:void(0);" onclick="digg({$m_id},0,1)">{$content_data[0]['down']}</a>
+						<span class="line">|</span>
+						<a class="comment-btn" href="#" title="评论" onClick="Effect('showHideId',this.parentNode.id)">0</a>
+						<span class="line">|</span>			
+					</div>	
+					<div class="bdsharebuttonbox">
+						<a href="#" class="bds_more" data-cmd="more"></a>
+						<a href="#" class="bds_qzone" data-cmd="qzone"></a>
+						<a href="#" class="bds_tsina" data-cmd="tsina"></a>
+						<a href="#" class="bds_tqq" data-cmd="tqq"></a>
+						<a href="#" class="bds_renren" data-cmd="renren"></a>
+						<a href="#" class="bds_weixin" data-cmd="weixin"></a>
+					</div>
+				</div>	
+				{/pc}
+			</div>
+			{/loop}
+			<div class="link-page">
+				<div class="page">{$pages}</div>
+			</div>
+			
+			{/pc}
+			
+		</div>
+		<div class="main-right">
+			<div class="main-right-login">
+				<img src="{IMG_PATH}jrx/systemImg/login.jpg"/>
+			</div>
+			<div class="a-m-sorting a-m-newjoke">
+				<dl class="a-m-sorting-head">
+					<dt>新笑话 抢新看</dt>
+					<dd>
+						<a href="#">查看更多</a>
+					</dd>
+				</dl>
+				{pc:content  action="position" posid="2"  order="listorder DESC" num="5"}
+				{loop $data $r}
+				<ul>
+					<li>
+						<a class="r-sorting-user-avatar"><img src="{IMG_PATH}jrx/systemImg/avatar.jpg"/></a>
+						{php $c_id=$r['id']}
+						{pc:get sql="SELECT * FROM jian_news WHERE id=$c_id" return="content_data"}
+						<div class="r-sorting-user-title">
+							<p><a href="{$content_data[0][url]}" target="blank"  title="{str_cut($content_data[0]['username'],30)}">{str_cut($content_data[0]['username'],30)}</a></p>
+							
+							<p><a href="{$content_data[0][url]}" target="blank" >{str_cut($content_data[0]['title'],30)}</a></p>
+						</div>
+					</li>
+				</ul>
+				{/loop}
+				{/pc}
+			</div>
+			<div class="new-pic-text">
+				<div>
+					<a href="http://www.baidu.com" class="new-pic-title">精彩文字笑话</a>	
+					<a class="more">更多</a>
+				</div>
+               {pc:content action="lists" catid="10" num="10"} 
+				<div class="new-pic-content">
+                	{loop $data $r}
+					<li><a href="{$r[url]}" target="_blank">{str_cut($r['title'],20)}</a></li>
+                    {/loop}
+				</div>
+                {/pc}
+				
+			</div>
+		</div>
+	</div>
+<!--main结束 -->
+
+<!--js区开始-->
+<script type="text/javascript"> 
+$(function(){
+	new slide("#main-slide","cur",690,220,1);//焦点图
+	new SwapTab(".SwapTab","span",".tab-content","ul","fb");//排行TAB
+})
+</script>
+<!--js区结束-->
+{template "content","footer"}

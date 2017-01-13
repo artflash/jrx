@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>贱人笑</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="description" content="贱人笑是一个笑话幽默分享的网站" />
+<meta name="keywords" content="贱人笑，贱人，笑话，幽默，娱乐，jianren,jianrenxiao.com" />
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?14849530a824347c089d1fc83022ec76";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body bgcolor="#009933" text="#000000">
+	<div style="text-align:center;margin-top:100px">
+		<p style="font-size:50px; text-align:center;color:yellow">贱人笑网站正在加紧开发中</p>
+		<p style="font-size:30px; text-align:center;color:yellow">请广大网友持续关注哦！贱人们加油吧!</p>
+		<p style="font-size:16px; text-align:center;color:yellow">官方网址：http://www.jianrenxiao.com</p>
+	</div>
+</body>
+</html>

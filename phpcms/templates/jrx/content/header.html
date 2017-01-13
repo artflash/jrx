@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+	<meta http-equiv="X-UA-Compatible" content="IE=7" />
+	<meta name="description" content="{$SEO['description']}" />
+	<meta name="keywords" content="{$SEO['keyword']}" />
+	<meta property="qc:admins" content="72427065176211625601176375" />
+	<meta property="wb:webmaster" content="ebe4b370116736c0" />
+	<link href="{CSS_PATH}jrx/main.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
+	<script type="text/javascript" src="{JS_PATH}jquery.sgallery.js"></script>
+	<script type="text/javascript" src="{JS_PATH}search_common.js"></script>
+	<script type="text/javascript" src="{JS_PATH}digg.js"></script>
+	
+	<!--百度代码统计开始-->
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?14849530a824347c089d1fc83022ec76";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+	
+	<script type="text/javascript">
+	$(document).ready(function()
+	{
+	  updateDingCai();
+	});
+	</script>
+	<!-- 百度代码统计结束-->
+	
+	<!-- 百度分享代码-->
+	<script>
+	window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"24"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+	</script>
+</head>
+<body>
+	<div class="header">
+		<div class="header-top">
+			<div class="header-top-content">
+				<p class="header-top-title">贱人笑-分享你身边的搞笑事，无节操，有内涵</p>
+				
+               <script type="text/javascript">document.write('<iframe src="{APP_PATH}index.php?m=member&c=index&a=mini&forward='+encodeURIComponent(location.href)+'&siteid={get_siteid()}" allowTransparency="true"  width="670px" height="30px" frameborder="0" scrolling="no"></iframe>')</script>
+    		</div>
+		</div>
+		<div class="header-nav">
+			<div class="logo">
+				<a href="http://www.jianrenxiao.com">
+					<img src="{IMG_PATH}jrx/systemImg/logo.png" alt="贱人笑-分享你身边的搞笑事，无节操，有内涵"/>
+				</a>
+			</div>
+			<ul>
+				{pc:content action="category" catid="0" num="25" siteid="$siteid"}
+				{loop $data $r}
+				<li>
+					<!--<a href="{if $n==1}{siteurl($siteid)}{else}{$r[url]}{/if}" target="_blank"><span>{$r[catname]}</span></a>-->
+                    <a href="{$r[url]}" target="_blank"><span>{$r[catname]}</span></a>
+				</li>
+				{/loop}
+				{/pc}
+			</ul>
+		</div>
+	</div>

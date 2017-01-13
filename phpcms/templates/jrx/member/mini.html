@@ -1,0 +1,56 @@
+<head>
+	
+</head>
+<style>
+body{font-family:"Î¢ÈíÑÅºÚ"; font-size:14px; margin:0; padding:0; background:none; line-height:30px; width:670px; height:30px; color:#ff;}
+a{color:#fff}
+a{text-decoration:none}
+.islogin{text-align:right}
+.border-nav-top{color:#fff; float:right}
+
+.islogin .border-nav-top{margin-right:10px}
+a.top-login-qq{float:right;margin-right:15px}
+a.top-login-weibo{float:right;margin-right:15px}
+a.top-login{float:right;margin-right:20px}
+a.top-reg{float:right; margin-right:0}
+
+a.top-login-qq,a.top-login-weibo{text-indent:25px;background:url("http://www.jianrenxiao.com/statics/images/jrx/systemImg/img.png") -2px 4px no-repeat}
+a.top-login-weibo{background-position:-4px -26px}
+.login-success{float:right; color:#fff}
+.login-success .member-center{color:#F4FB06}
+.login-success .login-out{color:#20F507}
+</style>
+<body>
+ 	<div class="islogin">
+	{php $userid= param::get_cookie('_userid');}
+    {if $userid}
+    	<div class="login-success">{if $_username}ÄúºÃ£¡£¡ {get_nickname()}, &nbsp;&nbsp;<a class="member-center" href="{APP_PATH}index.php?m=member&siteid={$siteid}" target="_blank">»áÔ±ÖÐÐÄ&nbsp;&nbsp;</a> <a class="login-out" href="{APP_PATH}index.php?m=member&c=index&a=logout&forward={urlencode($_GET['forward'])}&siteid={$siteid}" target="_top">ÍË³ö</a>{/if}
+        </div>
+    {else} 
+	<a href="{APP_PATH}index.php?m=member&c=index&a=register&siteid={$siteid}" target='_blank' class="top-reg">×¢²á</a>
+	<a class="top-login" href="{APP_PATH}index.php?m=member&c=index&a=login&forward={urlencode($_GET['forward'])}&siteid={$siteid}" target='_blank'>µÇÂ¼</a>
+	<span class="border-nav-top">|</span>
+	<a href="{APP_PATH}index.php?m=member&c=index&a=public_sina_login" target='_blank' class="top-login-weibo">Î¢²©µÇÂ¼</a>
+	<a href="{APP_PATH}index.php?m=member&c=index&a=public_qq_loginnew" target='_blank' " class="top-login-qq">QQµÇÂ¼</a>
+	
+	
+	
+	
+    {/if}
+    </div>
+<script language="JavaScript">
+	function show_login(site) {
+		if(site == 'sina') {
+			art.dialog({lock:false,title:'{L('sina_login')}',id:'protocoliframe', iframe:'index.php?m=member&c=index&a=public_sina_login',width:'500',height:'310',yesText:'{L('close')}'}, function(){
+			});
+		} else if(site == 'snda') {
+			art.dialog({lock:false,title:'{L('snda_login')}',id:'protocoliframe', iframe:'index.php?m=member&c=index&a=public_snda_login',width:'500',height:'310',yesText:'{L('close')}'}, function(){
+			});
+		} else if(site == 'qq') {
+			art.dialog({lock:false,title:'{L('qq_login')}',id:'protocoliframe', iframe:'index.php?m=member&c=index&a=public_qq_login',width:'500',height:'310',yesText:'{L('close')}'}, function(){
+			});
+		}
+	}
+//-->
+</script>
+</body>
